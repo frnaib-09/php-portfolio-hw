@@ -55,10 +55,11 @@ include ('./controller/header.php');
     }
 </style>
 
-<form class="email_form" action="./controller/user_validation.php">
+<form class="email_form" action="./controller/.php">
     <h1>Sign Up</h1>
     <label for="email">Email *</label>
     <input name="email" type="text" placeholder="michel.stark@gmail.com">
+    <span class="text-danger"><?= $_SESSION['form_errors']['email_error'] ?? null ?></span>
     <label for="user">Username *</label>
     <input name="user" type="text" placeholder="michel.stark">
     <label for="psk">Password *</label>
