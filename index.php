@@ -14,7 +14,7 @@
                     <p>Crafting high-performance web applications with <br> Laravel, PHP, and modern JavaScript frameworks. <br> Turning complex problems into elegant solutions.</p>
                     <div class="bannerBtn">
                         <a class="btn_primary" href="#">View My Work <iconify-icon icon="lucide:arrow-right"></iconify-icon></a>
-                        <a class="btn_secondary" href="./ats resume.pdf" download="./ats resume.pdf">Download Resume <iconify-icon icon="material-symbols:download-rounded"></iconify-icon></a>
+                        <a class="btn_secondary" target="_blank" href="./ats resume.pdf" download="./ats resume.pdf">Download Resume <iconify-icon icon="material-symbols:download-rounded"></iconify-icon></a>
                     </div>
                     <hr>
                     <div class="amolnama">
