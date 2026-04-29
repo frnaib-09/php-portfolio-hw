@@ -39,18 +39,18 @@ include ('./controller/header.php');
         box-shadow: var(--common-shadow);
     }
 
-    span {
+    .btm {
         display: block;
         text-align: center;
         margin: 12px 0 20px;
         color: var(--anchor-color);
     }
 
-    span a {
+    .btm a {
         color: var(--primary-color);
     }
 
-    span a:hover {
+    .btm a:hover {
         text-decoration: underline;
     }
 </style>
@@ -60,16 +60,21 @@ include ('./controller/header.php');
     <label for="email">Email *</label>
     <input name="email" type="text" placeholder="michel.stark@gmail.com">
     <span class="text-danger"><?= $_SESSION['form_errors']['email_error'] ?? null ?></span>
+
     <label for="user">Username *</label>
     <input name="user" type="text" placeholder="michel.stark">
     <span class="text-danger"><?= $_SESSION['form_errors']['username_error'] ?? null ?></span>
+
     <label for="psk">Password *</label>
     <input type="password" name="conf_pass" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;">
-    <span class="text-danger"><?= $_SESSION['form_errors']['password_error'] ?? null ?></span>
+    <span class="text-danger"><?= $_SESSION['form_errors']['password_error'] ?? '' ?></span>
+
     <label for="psk">Confirm Password *</label>
     <input type="password" name="psk" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;">
+    <span class="text-danger"><?= $_SESSION['form_errors']['confirm_pass_error'] ?? '' ?></span>
+
+    <span class="btm">Already have an account? <a href="./signin.php">Sign In</a></span>
     <button>Sign Up</button>
-    <span>Already have an account? <a href="./signin.php">Sign In</a></span>
 </form>
 
 <?php
