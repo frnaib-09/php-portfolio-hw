@@ -1,5 +1,5 @@
 <?php 
-    include_once('./controller/header.php');
+    include_once('./layouts/header.php');
 ?>
 
     <!-- ----------------------------------------------------------------------- -->
@@ -751,5 +751,5 @@
         <!-- footer section -->
         
 <?php 
-    include_once('./controller/footer.php');
+    include_once('./layouts/footer.php');
 ?>
