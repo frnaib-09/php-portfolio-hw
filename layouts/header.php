@@ -36,7 +36,11 @@ session_start();
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
+<<<<<<< HEAD:layouts/header.php
                             <a class="nav-link active" aria-current="page" href="./index.php">Home</a>
+=======
+                            <a class="nav-link active" aria-current="page" href="/index.php">Home</a>
+>>>>>>> 5048748aa5aff494e3bc871be16db8d74ddd00d8:controller/header.php
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#about">About</a>
