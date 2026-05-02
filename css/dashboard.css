@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&display=swap');
+
+:root {
+    --font-family: "Inter", sans-serif;
+    --primary-color: #fff;
+    --secondary-color: #94a3b8;
+    --anchor-color: #7a7a7a;
+    --subtitle-color: #64748b;
+    --blue-color: #007bff;
+    --btn-gradient: linear-gradient(90deg, #0EA5E9 0%, #2563EB 100%);
+    --btn-color: #1E293B;
+    --card-bg: #111113;
+    --hover-bg: linear-gradient(315deg, #111113 0%, #0f1a1d 100%);
+    --tag-bg: rgba(45, 212, 191, 0.1);
+    --card-border: #1c1c1f;
+    --card-hover: #0088A3;
+    --heading-hover: #22d3ee;
+    --common-shadow: 0px 10px 20px -5px rgba(0, 163, 177, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(90deg,#071421 0%,#0E2238 50%,#0B1020 100%);
+    font-family: var(--font-family);
+    color: var(--primary-color);
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--anchor-color);
+}
+
+h1, h2, h3, h4, h5, h6, a, p, span, ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+a.login_btn {
+    position: fixed;
+    top: 50%;
+    background: var(--tag-bg);
+    color: var(--primary-color);
+}
+
+ul,ol {
+    list-style: none;
+}
+
+iconify-icon {
+    vertical-align: middle;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background: rgba(3, 7, 18, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 100%;
+    border-top: none;
+    z-index: 1000000000 !important;
+}
+
+header nav h1 {
+    background: linear-gradient(90deg, #0EA5E9 0%, #2563EB 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Orbitron", sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 4px;
+    margin-left: 8px;
+}
+
+.navLeft {
+    border-right: 2px solid var(--heading-hover);
+}
+
+.navRight h2 {
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: 300;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-radius: 8px;
+    padding: 8px;
+    transition: all .25s ease;
+}
+
+.navRight .image-wrapper {
+    border: 1px solid var(--blue-color);
+    border-radius: 50%;
+    overflow: hidden;
+    width: 48px;
+    height: 48px;
+}
