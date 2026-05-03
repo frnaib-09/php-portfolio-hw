@@ -46,6 +46,5 @@ $('.comments').slick({
   pauseOnHover: true
 });
 
-new WOW().init();
 
-AOS.init();
+let imageWrapper

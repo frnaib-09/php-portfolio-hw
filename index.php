@@ -8,8 +8,8 @@
         <div class="container">
             <div class="row">
                 <div class="bannerLeft col-lg-6 col-12 col-md-12 wow fadeInLeft">
-                    <h5><iconify-icon icon="fluent:sparkle-32-regular"></iconify-icon>Available for Freelance</h5>
-                    <h1>Laravel <br> <span>Architect</span></h1>
+                    <h5 name="free"><iconify-icon icon="fluent:sparkle-32-regular"></iconify-icon>Available for Freelance</h5>
+                    <h1 name="tag">Laravel <br> <span>Architect</span></h1>
                     <h6><div class="line"></div>Full Stack Developer</h6>
                     <p>Crafting high-performance web applications with <br> Laravel, PHP, and modern JavaScript frameworks. <br> Turning complex problems into elegant solutions.</p>
                     <div class="bannerBtn">
