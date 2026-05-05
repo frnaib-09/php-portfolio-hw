@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foyjur Rafee</title>
+    <title>Foyjur Rafee - The best web developer in Asia</title>
     <link rel="icon" href="./images/web logo.png">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css" 

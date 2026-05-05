@@ -46,5 +46,3 @@ $('.comments').slick({
   pauseOnHover: true
 });
 
-
-let imageWrapper
