@@ -94,6 +94,7 @@ aside ul li {
     border-radius: 12px;
     border: 1px solid transparent;
     transition: .25s;
+    cursor: pointer;
 }
 
 aside ul li:hover {

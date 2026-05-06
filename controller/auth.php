@@ -1,5 +1,6 @@
 <?php
 session_start();
+$username = $_REQUEST['user'];
 $email = $_REQUEST['email'];
 $password = $_REQUEST['psk'];
 include_once '../database/env.php';
