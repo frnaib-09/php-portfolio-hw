@@ -11,9 +11,9 @@ if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
     $errors['email_error'] ="* Invalid E-mail";
 }
 
-// if(strlen($user) < 2){
-//     $errors['username_error'] = "* Please write at least 3 character";
-// }
+if(strlen($username) < 2){
+    $errors['username_error'] = "* Please write at least 3 character";
+}
 
 if(strlen($password) < 8 || strlen($password) > 32 || empty($password)) {
     $errors['password_error'] = "* Password must contain 8 to 32 characters";

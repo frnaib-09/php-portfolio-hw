@@ -2,7 +2,8 @@
 session_start();
 if(!isset($_SESSION['authenticate'])) {
     session_unset();
-    header("Locaiton: ../index.php");
+header("Location: index.php");
+    exit;
 }
 ?>
 
@@ -38,21 +39,24 @@ if(!isset($_SESSION['authenticate'])) {
             </ul>
             <hr>
             <ul class="bottomul">
-                <li><a href="../index.php"><iconify-icon icon="ic:outline-widgets"></iconify-icon>View Site</a></li>
-                <li><a href="../controller/logout.php"><iconify-icon icon="material-symbols:logout-sharp"></iconify-icon>Log Out</a></li>
+                <li><a href="../index.php" style="display:inline-flex; align-items:center; gap:8px;"> <iconify-icon icon="ic:outline-widgets"></iconify-icon>View Site</a></li>
+                <li><a href="../controller/logout.php" style="display:inline-flex; align-items:center; gap:8px;"> <iconify-icon icon="material-symbols:logout-sharp"></iconify-icon>Log Out</a></li>
             </ul>
         </aside>
         <nav>
             <div class="container">
                 <div class="row">
                     <div class="d-flex justify-content-end align-items-center">
-                        <div class="welcome">
+                        <div class="welcome text-end">
                             <p>Welcome back!</p>
-                            <h5><?= $_SESSION['authenticate']['name'] ?></h5>
+                            <h5><?= htmlspecialchars($_SESSION['authenticate']['name'] ?? '') ?></h5>
                         </div>
                         <div class="image-wrapper">
-                            <img src="./images/gemini image.jpeg" alt="" class=" img-fluid">
+                            <img src="./images/gemini image.jpeg" alt="" class=" img-fluid man">
                         </div>
+
+
+
                     </div>
                 </div>
             </div>

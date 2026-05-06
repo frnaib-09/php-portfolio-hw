@@ -50,13 +50,7 @@ session_start();
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#experience">Journey</a>
                         </li>
-                        <li class="nav-item">
-                            <?php if(isset($_SESSION['authenticate'])): ?>
-                                <a class="nav-link active" href="./dashboard.php">Dashboard</a>
-                            <?php else: ?>
-                                <a class="nav-link active" href="./signin.php">Sign In</a>
-                            <?php endif; ?>
-                        </li>
+
                         <li class="nav-item">
                             <button onclick="window.location.href='#contact'">Let's Talk <iconify-icon icon="streamline:mail-send-email-message"></iconify-icon></button>
                         </li>

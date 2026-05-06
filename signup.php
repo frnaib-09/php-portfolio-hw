@@ -4,6 +4,10 @@ include ('./layouts/header.php');
 
 <form class="email_form" action="./controller/user_validation.php" method="POST">
     <h1>Sign Up</h1>
+
+    <label for="name">Your Nmae *</label>
+    <input type="text" name="name" id="name" placeholder="Michel Stark">
+
     <label for="email">Email *</label>
     <input name="email" type="text" placeholder="michel.stark@gmail.com">
     <span class="text-danger"><?= $_SESSION['form_errors']['email_error'] ?? null ?></span>
