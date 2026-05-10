@@ -2,34 +2,30 @@
 session_start();
 if(!isset($_SESSION['authenticate'])) {
     session_unset();
-header("Location: index.php");
+    header("Location: index.php");
     exit;
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="icon" href="./images/web logo.png">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./css/slick.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/dashboard.css">
     <link rel="stylesheet" href="./css/responsive.css">
 </head>
-
 <body>
-    <header>
+    <div class="dashboard-wrapper">
         <aside>
             <h1>Admin Dashboard</h1>
             <hr>
             <ul>
-                <li class="active"><a href="#"><iconify-icon icon="ic:outline-widgets"></iconify-icon>Overview</a></li>
+                <!-- Note: 'active' class moved to the <a> tag to match your CSS -->
+                <li><a href="#" class="active"><iconify-icon icon="ic:outline-widgets"></iconify-icon>Banner</a></li>
                 <li><a href="#"><iconify-icon icon="octicon:person-24"></iconify-icon>About Me</a></li>
                 <li><a href="#"><iconify-icon icon="tdesign:code"></iconify-icon>Expertise</a></li>
                 <li><a href="#"><iconify-icon icon="prime:briefcase"></iconify-icon>Project</a></li>
@@ -39,28 +35,22 @@ header("Location: index.php");
             </ul>
             <hr>
             <ul class="bottomul">
-                <li><a href="../index.php" style="display:inline-flex; align-items:center; gap:8px;"> <iconify-icon icon="ic:outline-widgets"></iconify-icon>View Site</a></li>
-                <li><a href="../controller/logout.php" style="display:inline-flex; align-items:center; gap:8px;"> <iconify-icon icon="material-symbols:logout-sharp"></iconify-icon>Log Out</a></li>
+                <li><a href="./index.php"> <iconify-icon icon="ic:outline-widgets"></iconify-icon>View Site</a></li>
+                <li><a href="./controller/logout.php"> <iconify-icon icon="material-symbols:logout-sharp"></iconify-icon>Log Out</a></li>
             </ul>
         </aside>
-        <nav>
-            <div class="container">
-                <div class="row">
+
+        <header>
+            <nav>
+                <div class="container-fluid">
                     <div class="d-flex justify-content-end align-items-center">
                         <div class="welcome text-end">
                             <p>Welcome back!</p>
-                            <h5><?= htmlspecialchars($_SESSION['authenticate']['name'] ?? '') ?></h5>
+                            <h5><?= htmlspecialchars($_SESSION['authenticate']['username'] ?? 'Admin') ?></h5>
                         </div>
                         <div class="image-wrapper">
-                            <img src="./images/gemini image.jpeg" alt="" class=" img-fluid man">
+                            <img src="./images/gemini image.jpeg" alt="Profile" class="img-fluid man">
                         </div>
-
-
-
                     </div>
                 </div>
-            </div>
-        </nav>
-    </header>
-
-        <main>
+            </nav>
