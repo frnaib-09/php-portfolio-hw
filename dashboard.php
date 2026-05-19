@@ -59,12 +59,14 @@
                             <!-- Files (CV & Image) -->
                             <div class="col-md-6">
                                 <label for="cv">Upload CV</label>
-                                <input type="file" name="cv" id="cv">
+                                <input type="file" name="cv" id="cv" class="hidden-input">
+                                <label for="image" class="custom-file-box"><span class="plus-icon"><i class="bi bi-plus-lg"></i></span></label>
                                 <span class="text-danger"><?= $_SESSION['form_errors']['cv_error'] ?? null ?></span>
                             </div>
                             <div class="col-md-6">
                                 <label for="image">Profile Image</label>
                                 <input type="file" name="image" id="image">
+                                <label for="image" class="custom-file-box"><span class="plus-icon"><i class="bi bi-plus-lg"></i></span></label>
                                 <span class="text-danger"><?= $_SESSION['form_errors']['image_error'] ?? null ?></span>
                             </div>
 
@@ -79,5 +81,5 @@
     </div>
 </main>
 
-<?php include_once "./layouts/dash_footer.php";
-unset($_SESSION['form_errors']);
+<?php 
+include_once "./layouts/dash_footer.php";

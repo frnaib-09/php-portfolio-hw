@@ -2,9 +2,6 @@
 session_start();
 include_once "../database/env.php";
 
-// echo "<pre>";
-// print_r($_FILES);
-
 $job_type = $_REQUEST['job_type'];
 $moto = $_REQUEST['moto'];
 $title = $_REQUEST['title'];
@@ -18,6 +15,7 @@ $cv = $_FILES['cv'];
 $image = $_FILES['image'];
 $errors = [];
 $cvExt = "";
+$imageExt = "";
 
 if($cv['size'] > 0){
     $cvPath = pathinfo($cv['name']);
@@ -44,11 +42,34 @@ if(count($errors) > 0){
     $_SESSION['form_errors'] = $errors;
     header("Location: ../dashboard.php");
 } else {
+    //cv upload
+    $cvPath = "";
+    $imagePath = "";
+
     if($cv['size'] > 0){
         if(!file_exists("../uploads/")) {
             mkdir("../uploads");
         }
         $cvNewName = uniqid() . ". $cvExt";
+        $cvPath = "uploads/" . $cvNewName;
         move_uploaded_file($cv['tmp_name'], "../uploads/" . $cvNewName);
     }
+
+    //image upload
+    if($image['size'] > 0){
+        if(!file_exists("../uploads/")) {
+            mkdir("../uploads");
+        }
+        $imageNewName = uniqid() . ". $imageExt";
+        $imagePath = "uploads/" . $imageNewName;
+        move_uploaded_file($image['tmp_name'], "../uploads/" . $imageNewName);
+    }
+
+    //database insertion
+    $query = "INSERT INTO `banners`(`job_type`, `moto`, `title`, `short_desc`, `cta`, `cta_link`, `exp`, `projects`, `clients`, `cv`, `image`) VALUES ('$job_type','$moto','$title','$short_desc','$cta','$cta_link','$experience','$projects','$clients','$cvPath','$imagePath')";
+    
+    $result = mysqli_query($connection, $query);
+
+    
+    header ("Location: ../dashboard.php");
 }

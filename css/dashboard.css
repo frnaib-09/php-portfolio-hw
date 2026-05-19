@@ -29,9 +29,10 @@ body {
     font-family: var(--font-family);
     color: var(--primary-color);
     height: 100vh;
-    overflow-x: hidden;
+    overflow-y: hidden;
     display: flex;
-}  
+    
+}
 
 a {
     text-decoration: none;
@@ -235,6 +236,25 @@ input:focus {
     outline: none;
 }
 
+input[type="file"]::-webkit-file-upload-button {
+    display: none;
+}
+
+input[type="file"]::webkit-file-selector-button {
+    display: none;
+}
+
+input[type="file"] {
+    border: 2px solid #00a3c4;
+    border-radius: 16px;
+    background-color: #050608;
+    color: transparent;
+    position: relative;
+    width: 100%;
+    height: 70px;
+    cursor: pointer;
+}
+
 .btn_primary {
     background: linear-gradient(90deg, #0EA5E9 0%, #2563EB 100%);
     color: white;
@@ -260,4 +280,3 @@ input:focus {
 .btn_primary:hover iconify-icon {
     transform: translateX(3px);
 }
-

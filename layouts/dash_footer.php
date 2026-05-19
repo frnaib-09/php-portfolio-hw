@@ -6,3 +6,6 @@
     <script src="./js/dashboard.js"></script>
 </body>
 </html>
+
+<?php
+unset($_SESSION['form_errors']);
