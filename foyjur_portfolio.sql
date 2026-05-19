@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2026 at 10:25 PM
+-- Generation Time: May 19, 2026 at 10:55 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -48,7 +48,7 @@ CREATE TABLE `banners` (
 --
 
 INSERT INTO `banners` (`id`, `job_type`, `moto`, `motos`, `title`, `short_desc`, `cta`, `cta_link`, `exp`, `projects`, `clients`, `cv`, `image`) VALUES
-(8, 'Freelance', 'Laravel', 'Architect', 'Full Stack Developer', 'Crafting high-performance web applications with Laravel, PHP, and modern JavaScript frameworks. Turning complex problems into elegant solutions.', 'View My Work', '', '2+', '50+', '30+', 'uploads/6a0cc3db70bab. pdf', 'uploads/6a0cc3db70cca. png');
+(10, 'Freelance', 'Laravel', 'Architect', 'Full Stack Developer', 'Crafting high-performance web applications with Laravel, PHP, and modern JavaScript frameworks. Turning complex problems into elegant solutions.', 'View My Work', '', '2+', '50+', '30+', 'uploads/6a0ccd58d55c6. pdf', 'uploads/6a0ccd58d56d7. png');
 
 -- --------------------------------------------------------
 
@@ -95,7 +95,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
