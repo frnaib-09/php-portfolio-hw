@@ -9,22 +9,25 @@
                     
                     <form action="./controller/banner_link.php" method="POST" enctype="multipart/form-data">
                         <div class="row g-3">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <label for="job_type">Job Type</label>
                                 <input type="text" name="job_type" id="job_type" placeholder="Freelance">
                             </div>
                             
-                            <div class="col-md-4">
-                                <label for="moto">Moto</label>
-                                <input type="text" name="moto" id="moto" placeholder="Laravel Architect">
-                            </div>
-
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <label for="title">Title</label>
                                 <input type="text" name="title" id="title" placeholder="Full Stack Developer">
                             </div>
 
-                            <!-- Moto -->
+                            <div class="col-md-6">
+                                <label for="moto">Moto part-1</label>
+                                <input type="text" name="moto" id="moto" placeholder="Laravel">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="motos">Moto part-2</label>
+                                <input type="text" name="motos" id="motos" placeholder="Architect">
+                            </div>
 
                             <!-- Short Description -->
                             <div class="col-12">

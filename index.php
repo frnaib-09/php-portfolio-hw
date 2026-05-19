@@ -1,40 +1,48 @@
 <?php 
     include_once('./layouts/header.php');
+    include_once('./database/env.php');
+    $query = "SELECT * FROM banners LIMIT 1";
+    $result = mysqli_query($connection, $query);
+    $banner = mysqli_fetch_assoc($result);
+
 ?>
 
     <!-- ----------------------------------------------------------------------- -->
     <!--                             Banner Section                              -->
+    <?php
+    if (isset($banner)) {
+    ?>
     <section id="banner">
         <div class="container">
             <div class="row">
                 <div class="bannerLeft col-lg-6 col-12 col-md-12 wow fadeInLeft">
-                    <h5 name="free"><iconify-icon icon="fluent:sparkle-32-regular"></iconify-icon>Available for Freelance</h5>
-                    <h1 name="tag">Laravel <br> <span>Architect</span></h1>
-                    <h6><div class="line"></div>Full Stack Developer</h6>
-                    <p>Crafting high-performance web applications with <br> Laravel, PHP, and modern JavaScript frameworks. <br> Turning complex problems into elegant solutions.</p>
+                    <h5 name="free"><iconify-icon icon="fluent:sparkle-32-regular"></iconify-icon>Available for <?= $banner['job_type'] ?></h5>
+                    <h1 name="tag"><?= $banner['moto'] ?> <br> <span><?= $banner['motos'] ?></span></h1>
+                    <h6><div class="line"></div><?= $banner['title'] ?></h6>
+                    <p class="text-justify"><?= $banner['short_desc'] ?></p>
                     <div class="bannerBtn">
-                        <a class="btn_primary" href="#">View My Work <iconify-icon icon="lucide:arrow-right"></iconify-icon></a>
-                        <a class="btn_secondary" target="_blank" href="./ats resume.pdf" download="./ats resume.pdf">Download Resume <iconify-icon icon="material-symbols:download-rounded"></iconify-icon></a>
+                        <a class="btn_primary" href="#work"><?= $banner['cta'] ?> <iconify-icon icon="lucide:arrow-right"></iconify-icon></a>
+                        <a class="btn_secondary" target="_blank" href="./<?= $banner['cv'] ?>" download="./<?= $banner['cv'] ?>">Download Resume <iconify-icon icon="material-symbols:download-rounded"></iconify-icon></a>
                     </div>
                     <hr>
                     <div class="amolnama">
                         <div class="col-lg-4">
-                            <h3>2+</h3>
+                            <h3><?= $banner['exp'] ?></h3>
                             <p>Year of Experience</p>
                         </div>
                         <div class="col-lg-4">
-                            <h3>50+</h3>
+                            <h3><?= $banner['projects'] ?></h3>
                             <p>Projects</p>
                         </div>
                         <div class="col-lg-4">
-                            <h3>30+</h3>
+                            <h3><?= $banner['clients'] ?></h3>
                             <p>Clients</p>
                         </div>
                     </div>
                 </div>
                 <div class="bannerRight col-lg-6 col-12 col-md-12 wow fadeInRight">
                     <img src="./images/codeSS.png" alt="" class="code img-fluid">
-                    <div class="manWrapper"><img src="./images/gemini image.jpeg" alt="" class="man img-fluid"></div>
+                    <div class="manWrapper"><img src="./<?= $banner['image'] ?>" alt="" class="man img-fluid"></div>
                     <div class="loadingPg">
                         <div class="div1"></div>
                         <div class="div2"></div>
@@ -48,6 +56,9 @@
             </div>
         </div>
     </section>
+    <?php
+    }
+    ?>
     <!-- ----------------------------------------------------------------------- -->
 
     <!-- ----------------------------------------------------------------------- -->

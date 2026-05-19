@@ -4,6 +4,7 @@ include_once "../database/env.php";
 
 $job_type = $_REQUEST['job_type'];
 $moto = $_REQUEST['moto'];
+$motos = $_REQUEST['motos'];
 $title = $_REQUEST['title'];
 $short_desc = $_REQUEST['short_desc'];
 $cta = $_REQUEST['cta'];
@@ -42,6 +43,26 @@ if(count($errors) > 0){
     $_SESSION['form_errors'] = $errors;
     header("Location: ../dashboard.php");
 } else {
+    $query = "SELECT * FROM `banners`";
+    $result = mysqli_query($connection, $query);
+
+    if(mysqli_num_rows($result) > 0){
+        $existingBanner = mysqli_fetch_assoc($result);
+        //cv existance check 
+        $cvVerify = '../' . $existingBanner['cv'];
+        if($existingBanner['cv'] && file_exists($cvVerify)){
+            unlink($cvVerify);
+        }
+        //image existance check
+        $imageVerify = '../' . $existingBanner['image'];
+        if($existingBanner['image'] && file_exists($imageVerify)){
+            unlink($imageVerify);
+        }
+
+        $delQuery = "DELETE FROM `banners`";
+        mysqli_query($connection, $delQuery);
+    }
+
     //cv upload
     $cvPath = "";
     $imagePath = "";
@@ -66,7 +87,7 @@ if(count($errors) > 0){
     }
 
     //database insertion
-    $query = "INSERT INTO `banners`(`job_type`, `moto`, `title`, `short_desc`, `cta`, `cta_link`, `exp`, `projects`, `clients`, `cv`, `image`) VALUES ('$job_type','$moto','$title','$short_desc','$cta','$cta_link','$experience','$projects','$clients','$cvPath','$imagePath')";
+    $query = "INSERT INTO `banners`(`job_type`, `moto`, `motos`, `title`, `short_desc`, `cta`, `cta_link`, `exp`, `projects`, `clients`, `cv`, `image`) VALUES ('$job_type','$moto','$motos','$title','$short_desc','$cta','$cta_link','$experience','$projects','$clients','$cvPath','$imagePath')";
     
     $result = mysqli_query($connection, $query);
 

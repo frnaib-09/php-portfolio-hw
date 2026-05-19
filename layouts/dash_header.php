@@ -1,10 +1,17 @@
 <?php
 session_start();
+include_once('./database/env.php');
+
 if(!isset($_SESSION['authenticate'])) {
     session_unset();
     header("Location: index.php");
     exit;
 }
+
+    $query = "SELECT * FROM banners LIMIT 1";
+    $result = mysqli_query($connection, $query);
+    $banner = mysqli_fetch_assoc($result);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,10 +54,10 @@ if(!isset($_SESSION['authenticate'])) {
                     <div class="d-flex justify-content-end align-items-center">
                         <div class="welcome text-end">
                             <p>Welcome back!</p>
-                            <h5><?= htmlspecialchars($_SESSION['authenticate']['username'] ?? 'Admin') ?></h5>
+                            <h5><?= $_SESSION['authenticate']['username'] ?? '' ?></h5>
                         </div>
                         <div class="image-wrapper">
-                            <img src="./images/gemini image.jpeg" alt="Profile" class="img-fluid man">
+                            <img src="./<?= $banner['image'] ?>" alt="Profile" class="img-fluid man">
                         </div>
                     </div>
                 </div>
