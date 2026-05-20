@@ -34,7 +34,7 @@ if(!isset($_SESSION['authenticate'])) {
             <ul>
                 <!-- Note: 'active' class moved to the <a> tag to match your CSS -->
                 <li><a href="#" class="active"><iconify-icon icon="ic:outline-widgets"></iconify-icon>Banner</a></li>
-                <li><a href="#"><iconify-icon icon="octicon:person-24"></iconify-icon>About Me</a></li>
+                <li><a href="./dash_about.php"><iconify-icon icon="octicon:person-24"></iconify-icon>About Me</a></li>
                 <li><a href="#"><iconify-icon icon="tdesign:code"></iconify-icon>Expertise</a></li>
                 <li><a href="#"><iconify-icon icon="prime:briefcase"></iconify-icon>Project</a></li>
                 <li><a href="#"><iconify-icon icon="mi:location"></iconify-icon>Journey</a></li>

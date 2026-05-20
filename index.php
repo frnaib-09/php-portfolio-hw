@@ -4,7 +4,9 @@
     $query = "SELECT * FROM banners LIMIT 1";
     $result = mysqli_query($connection, $query);
     $banner = mysqli_fetch_assoc($result);
-
+    $abquery = "SELECT * FROM abouts LIMIT 1";
+    $abresult = mysqli_query($connection, $abquery);
+    $about = mysqli_fetch_assoc($abresult);
 ?>
 
     <!-- ----------------------------------------------------------------------- -->
@@ -63,45 +65,50 @@
 
     <!-- ----------------------------------------------------------------------- -->
     <!--                              About Section                              -->
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="aboutLeft col-lg-6 wow fadeInLeft">
-                    <h6 class="wow lightSpeedInLeft"><iconify-icon icon="icon-park-outline:dot" ></iconify-icon>About Me</h6>
-                    <h1>Crafting Digital <br><span> Experiences </span></h1>
-                    <p>I'm a passionate full-stack developer specializing in Laravel and modern web technologies. With years of experience building scalable applications, I transform complex problems into elegant, user-friendly solutions.</p>
-                    <p>My journey in web development started with a curiosity about how things work on the internet, and it has evolved into a career where I get to create meaningful digital experiences every day. I believe in writing clean, maintainable code and staying up-to-date with the latest industry trends.</p>
-                    <p>When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community. I'm always excited to take on new challenges and collaborate on innovative projects.</p>
-                </div>
-                <div class="aboutRight col-lg-6 wow fadeInRight" data-wow-duration="1s">
-                    <div class="toppings d-flex">
-                        <div class="topppu col-lg-6">
-                             <iconify-icon icon="mingcute:code-line"></iconify-icon>
-                             <h3>100K+</h3>
-                             <p>Lines of Code</p>
-                        </div>
-                        <div class="topppu col-lg-6">
-                             <iconify-icon icon="ph:coffee-thin"></iconify-icon>
-                             <h3>∞</h3>
-                             <p>Coffee Consumed</p>
-                        </div>
+    <?php
+    if (isset($about)) {?>
+        <section id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="aboutLeft col-lg-6 wow fadeInLeft">
+                        <h6 class="wow lightSpeedInLeft"><iconify-icon icon="icon-park-outline:dot" ></iconify-icon>About Me</h6>
+                        <h1><?= $about['title_1'] ?> <br><span> <?= $about['title_2'] ?> </span></h1>
+                        <p><?= $about['paragraph_1'] ?></p>
+                        <p><?= $about['paragraph_2'] ?></p>
+                        <p><?= $about['paragraph_3'] ?></p>
                     </div>
-                    <div class="toppings d-flex">
-                        <div class="topppu col-lg-6">
-                             <iconify-icon icon="octicon:light-bulb-24"></iconify-icon>
-                             <h3>100+</h3>
-                             <p>Projects Delivered</p>
+                    <div class="aboutRight col-lg-6 wow fadeInRight" data-wow-duration="1s">
+                        <div class="toppings d-flex">
+                            <div class="topppu col-lg-6">
+                                 <iconify-icon icon="mingcute:code-line"></iconify-icon>
+                                 <h3>100K+</h3>
+                                 <p>Lines of Code</p>
+                            </div>
+                            <div class="topppu col-lg-6">
+                                 <iconify-icon icon="ph:coffee-thin"></iconify-icon>
+                                 <h3>∞</h3>
+                                 <p>Coffee Consumed</p>
+                            </div>
                         </div>
-                        <div class="topppu col-lg-6">
-                             <iconify-icon icon="radix-icons:people"></iconify-icon>
-                             <h3>100+</h3>
-                             <p>Happy Clients</p>
+                        <div class="toppings d-flex">
+                            <div class="topppu col-lg-6">
+                                 <iconify-icon icon="octicon:light-bulb-24"></iconify-icon>
+                                 <h3>100+</h3>
+                                 <p>Projects Delivered</p>
+                            </div>
+                            <div class="topppu col-lg-6">
+                                 <iconify-icon icon="radix-icons:people"></iconify-icon>
+                                 <h3>100+</h3>
+                                 <p>Happy Clients</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    <?php
+    }
+    ?>
     <!-- ----------------------------------------------------------------------- -->
 
     <!-- ----------------------------------------------------------------------- -->

@@ -81,7 +81,8 @@
             </div>
         </div>
     </div>
-</main>
+
+    
 
 <?php 
 include_once "./layouts/dash_footer.php";
