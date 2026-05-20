@@ -683,6 +683,7 @@ header nav ul li button:hover iconify-icon {
     color: var(--secondary-color);
     text-align: justify;
     font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .aboutRight {

@@ -62,3 +62,6 @@ if(!isset($_SESSION['authenticate'])) {
                     </div>
                 </div>
             </nav>
+        </header>
+
+        <main class="p-4">

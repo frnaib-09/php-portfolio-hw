@@ -1,6 +1,5 @@
 <?php include_once "./layouts/dash_header.php"; ?>
 
-<main class="p-4">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
